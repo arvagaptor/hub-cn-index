@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>乐鱼体育 — 再次翻阅的杂志式介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf9f7;
+      color: #2c2b28;
+      font-family: "Noto Serif SC", "Georgia", "Times New Roman", serif;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+    }
+
+    .wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.4rem 1.8rem 3.2rem;
+    }
+
+    /* hero 横幅 — 杂志开页式 */
+    .hero {
+      margin-bottom: 4rem;
+      padding-top: 1.2rem;
+      border-top: 3px solid #2c2b28;
+    }
+
+    .hero .kicker {
+      font-family: "Inter", "Helvetica Neue", sans-serif;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: #a09888;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 400;
+      line-height: 1.2;
+      color: #1f1e1b;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero .subhead {
+      font-size: 1rem;
+      color: #6b655a;
+      font-style: italic;
+      border-bottom: 1px solid #d9d3c9;
+      padding-bottom: 1.2rem;
+    }
+
+    /* 背景说明 — 像编者按 */
+    .background-note {
+      background-color: #f2efe9;
+      padding: 2rem 2rem 1.8rem;
+      margin-bottom: 3.2rem;
+      border-radius: 2px;
+      font-size: 0.95rem;
+    }
+
+    .background-note p {
+      margin-bottom: 1rem;
+    }
+
+    .background-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .background-note strong {
+      font-weight: 600;
+      color: #1f1e1b;
+    }
+
+    /* 三段自然介绍 — 使用杂志内页卡片式 */
+    .feature-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+      margin-bottom: 3.8rem;
+    }
+
+    .feature-item {
+      padding: 1.6rem 0 1.2rem;
+      border-bottom: 1px dashed #d0cac0;
+    }
+
+    .feature-item:last-child {
+      border-bottom: none;
+    }
+
+    .feature-item h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #302d27;
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #3f3b34;
+    }
+
+    .feature-item .meta-tag {
+      display: inline-block;
+      font-family: "Inter", sans-serif;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #958d80;
+      margin-bottom: 0.4rem;
+    }
+
+    /* 页尾访问提示 — 自然融入 */
+    .footer-access {
+      margin-top: 2.4rem;
+      padding: 2rem 0 0.4rem;
+      border-top: 1px solid #d9d3c9;
+      text-align: left;
+    }
+
+    .footer-access p {
+      font-size: 0.9rem;
+      color: #4d4840;
+      max-width: 90%;
+    }
+
+    .footer-access a {
+      color: #2c5f4a;
+      text-decoration: none;
+      border-bottom: 1px solid #bccfc4;
+      transition: border-color 0.2s, color 0.2s;
+      font-weight: 500;
+    }
+
+    .footer-access a:hover {
+      color: #1d4d38;
+      border-bottom-color: #1d4d38;
+    }
+
+    .fine-print {
+      margin-top: 2.8rem;
+      font-size: 0.7rem;
+      color: #a59d90;
+      font-family: "Inter", sans-serif;
+      border-top: 1px solid #e5e0d7;
+      padding-top: 1.2rem;
+      text-align: right;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 520px) {
+      .wrapper {
+        padding: 1.6rem 1.2rem 2.4rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .background-note {
+        padding: 1.4rem;
+      }
+      .feature-item {
+        padding: 1.2rem 0 1rem;
+      }
+      .footer-access p {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 首页横幅 -->
+  <header class="hero">
+    <div class="kicker">· 杂志特辑 · 再次翻阅</div>
+    <h1>乐鱼体育</h1>
+    <div class="subhead">一份持续关注的笔记，与一次安静的返回</div>
+  </header>
+
+  <!-- 背景说明 —— 为什么再次拜访 -->
+  <div class="background-note">
+    <p>有些站点，你初次到访只是偶然，第二次打开却像翻一本常读常新的杂志。<strong>乐鱼体育</strong>给我的印象即是如此——简洁的界面下藏着扎实的内容结构，没有杂乱的弹窗与浮夸的标语，反而让人愿意一次次点开书签，看看最近有什么更新。</p>
+    <p>这期介绍不打算复述首页已有的信息，而是从“收藏夹里的老朋友”这个视角出发，聊聊为什么一个体育内容平台值得你把它固定放在常用书签栏。</p>
+  </div>
+
+  <!-- 三段自然介绍（杂志式专题内页） -->
+  <div class="feature-grid">
+
+    <div class="feature-item">
+      <span class="meta-tag">—— 收藏的理由</span>
+      <h2>常去常新，而非一次性浏览</h2>
+      <p>很多内容站第一次看觉得丰富，第二次就失去新鲜感。<strong>乐鱼体育</strong>却不同：它的信息密度恰好，赛事资讯、专题回顾、数据梳理，每隔一段时间再去，总有些新编排的栏目在等你。就像书架上那本你时不时抽出来翻两页的杂志，不必从头到尾，随意打开一页就有收获。</p>
+    </div>
+
+    <div class="feature-item">
+      <span class="meta-tag">—— 持续关注的节奏</span>
+      <h2>没有催促，却自然想回来</h2>
+      <p>页面里没有大红按钮催你注册，也没有倒计时制造焦虑。相反，它用干净的行文、克制的配色和稳定的更新节奏，让你自己决定什么时候再回来。这种“被尊重”的感觉，在如今的网络环境里很难得。我通常周末打开一次，安静地读完几篇，然后关掉，下次再来。</p>
+    </div>
+
+    <div class="feature-item">
+      <span class="meta-tag">—— 场景与日常</span>
+      <h2>从收藏到习惯，只需两次访问</h2>
+      <p>第一次是好奇，第二次是确认。当你发现某个网站每次去都没有失望，它就悄悄从“临时标签”变成了“日常去处”。对我来说，<strong>乐鱼体育</strong>就是这样一个地方：没有多余的动作，打开就是内容本身。适合放在浏览器书签栏的第一屏，随时点开，随时离开，没有负担。</p>
+    </div>
+
+  </div>
+
+  <!-- 页尾访问提示 —— 自然嵌入链接 -->
+  <div class="footer-access">
+    <p>如果你也欣赏这种不打扰的质感，不妨把<span> </span><a href="https://cn-index-leyusports.com.cn">乐鱼体育</a><span> </span>加入书签。下次再想起时，直接点开就好，它会在那儿，用熟悉的安静界面等着你。</p>
+  </div>
+
+  <!-- 极简脚注（仅作为杂志页码感） -->
+  <div class="fine-print">
+    · 2025 · 再次翻阅版
+  </div>
+
+</div>
+</body>
+</html>
