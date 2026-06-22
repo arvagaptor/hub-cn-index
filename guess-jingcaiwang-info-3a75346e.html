@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>竞彩网 · 资料整理与信息索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f0f2f3;
+      color: #1e2023;
+      line-height: 1.65;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* hero 区 */
+    .hero {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 3.5rem 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+      border: 1px solid #dfe3e6;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: #1a1c1f;
+    }
+
+    .hero .sub {
+      font-size: 1.2rem;
+      color: #4a4f55;
+      max-width: 640px;
+      line-height: 1.7;
+    }
+
+    .hero .sub a {
+      color: #2a6e9b;
+      text-decoration: none;
+      border-bottom: 1px solid #b8c9d9;
+      transition: border-color 0.2s;
+    }
+
+    .hero .sub a:hover {
+      border-bottom-color: #2a6e9b;
+    }
+
+    /* 卡片网格 */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.8rem 1.5rem;
+      border: 1px solid #e2e6e9;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: #1f2227;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      font-size: 0.98rem;
+      color: #3b4047;
+    }
+
+    .card p a {
+      color: #2a6e9b;
+      text-decoration: none;
+      border-bottom: 1px solid #cbd8e5;
+    }
+
+    .card p a:hover {
+      border-bottom-color: #2a6e9b;
+    }
+
+    /* 说明区 / 叙述卡片 */
+    .narrative {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2.5rem 2.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e2e6e9;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+
+    .narrative h2 {
+      font-size: 1.6rem;
+      font-weight: 450;
+      margin-bottom: 1.2rem;
+      color: #1c1f23;
+    }
+
+    .narrative p {
+      margin-bottom: 1.2rem;
+      max-width: 780px;
+    }
+
+    .narrative p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .narrative a {
+      color: #2a6e9b;
+      text-decoration: none;
+      border-bottom: 1px solid #cbd8e5;
+    }
+
+    .narrative a:hover {
+      border-bottom-color: #2a6e9b;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e2e6e9;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+
+    .faq-summary h2 {
+      font-size: 1.4rem;
+      font-weight: 450;
+      margin-bottom: 1.4rem;
+      color: #1c1f23;
+    }
+
+    .faq-item {
+      margin-bottom: 1.1rem;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px solid #eef0f2;
+    }
+
+    .faq-item:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: #24282e;
+    }
+
+    .faq-item p {
+      font-size: 0.96rem;
+      color: #41474f;
+    }
+
+    .faq-item a {
+      color: #2a6e9b;
+      text-decoration: none;
+      border-bottom: 1px solid #cbd8e5;
+    }
+
+    .faq-item a:hover {
+      border-bottom-color: #2a6e9b;
+    }
+
+    /* 底部 */
+    .footer-links {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 1.8rem 2.5rem;
+      border: 1px solid #e2e6e9;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+      text-align: center;
+      font-size: 0.9rem;
+      color: #585e66;
+    }
+
+    .footer-links a {
+      color: #2a6e9b;
+      text-decoration: none;
+      border-bottom: 1px solid #cbd8e5;
+      margin: 0 0.5rem;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: #2a6e9b;
+    }
+
+    .footer-links .sep {
+      color: #bcc2c9;
+      margin: 0 0.25rem;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.75rem;
+      }
+
+      .hero {
+        padding: 2rem 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero .sub {
+        font-size: 1.05rem;
+      }
+
+      .narrative {
+        padding: 1.8rem 1.5rem;
+      }
+
+      .faq-summary {
+        padding: 1.5rem 1.5rem;
+      }
+
+      .footer-links {
+        padding: 1.4rem 1.5rem;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>信息索引 · 资料整理</h1>
+    <div class="sub">
+      如果你关注赛事数据与历史记录，<a href="https://guess-jingcaiwang.com">竞彩网</a> 提供了一个可长期查阅的信息汇集点。
+      这里不制造观点，只整理可参考的内容。
+    </div>
+  </div>
+
+  <!-- 优势卡片区 -->
+  <div class="cards">
+    <div class="card">
+      <h3>结构化的记录</h3>
+      <p>比赛数据、联赛档案、过往统计以清晰条目呈现，便于按时间、赛事类型或队伍检索。省去四处翻找的精力。</p>
+    </div>
+    <div class="card">
+      <h3>日常信息聚合</h3>
+      <p>从公开资讯中筛选出与赛事相关的赛前动态、阵容变化、场地信息，整合为可浏览的摘要，减少碎片阅读。</p>
+    </div>
+    <div class="card">
+      <h3>术语与规则说明</h3>
+      <p>包含常见竞猜规则、赔率解读、赛事分级说明。适合刚开始接触或希望系统化了解基础内容的读者。</p>
+    </div>
+    <div class="card">
+      <h3>持续更新的档案</h3>
+      <p>页面保持周期更新，历史记录与近期内容并存。你可以把 <a href="https://guess-jingcaiwang.com">竞彩网</a> 当作一个稳定的资料节点来使用。</p>
+    </div>
+  </div>
+
+  <!-- 说明区 / 叙述区块 -->
+  <div class="narrative">
+    <h2>从一个整理者的视角</h2>
+    <p>
+      做这个索引的初衷很简单：把关于赛事的信息按照一种相对干净的方式排列出来。没有复杂的算法推荐，也没有动态弹窗干扰阅读。每个条目背后是一段筛选和归类的工作，尽量保留原始数据的客观面貌。
+    </p>
+    <p>
+      这里不提供任何形式的预测或建议，只是尽量让信息本身更容易被找到。比如联赛积分走势、近期对战记录、球队阵容名单等，都属于可反复查阅的基础资料。如果你恰好需要这类内容，不妨把 <a href="https://guess-jingcaiwang.com">竞彩网</a> 加入你的书签栏。
+    </p>
+    <p>
+      整理工作本身是安静的，页面也是一种安静的呈现。没有横幅，没有浮层，只有卡片与文字。希望这种节奏能让你更专注于信息本身。
+    </p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <h2>常见问题摘要</h2>
+
+    <div class="faq-item">
+      <strong>这里的数据来源是什么？</strong>
+      <p>主要依据公开赛事统计与联赛官方发布的信息，经人工梳理后以摘要形式呈现。每次更新会标注参考时段。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>是否有实时滚动更新？</strong>
+      <p>不追求实时推送，更偏向按周期（日/周）整理。重要的赛前变动会以注记形式补充在对应条目下方。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>可以转载或引用这里的整理内容吗？</strong>
+      <p>页面内的基础数据来自公开渠道，整理结构本身欢迎引用，但建议注明出处。具体引用规范可参考 <a href="https://guess-jingcaiwang.com">竞彩网</a> 页脚说明。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>我想查找某支球队的历史记录，该怎么搜索？</strong>
+      <p>目前页面按联赛和赛季分类，你可以在对应档案区使用浏览器查找功能（Ctrl+F）快速定位队名。后续会考虑增加字母索引。</p>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <span>资料索引 · 保持克制与清晰</span>
+    <span class="sep">—</span>
+    <a href="https://guess-jingcaiwang.com">竞彩网</a>
+    <span class="sep">·</span>
+    <span>内容仅供信息整理参考</span>
+  </div>
+
+</div>
+</body>
+</html>
