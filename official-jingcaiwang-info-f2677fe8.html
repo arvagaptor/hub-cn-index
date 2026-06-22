@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩网 · 持续关注，轻松再访</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fb;
+            color: #2d3136;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #c44536;
+            text-decoration: none;
+            transition: color 0.2s, border-bottom 0.2s;
+            border-bottom: 1px dotted transparent;
+        }
+
+        a:hover {
+            color: #9e2f1f;
+            border-bottom: 1px dotted #c44536;
+        }
+
+        /* ----- 深色头图 ----- */
+        .hero {
+            background: linear-gradient(145deg, #1f2329 0%, #2b313a 100%);
+            color: #eaeef3;
+            padding: 3.5rem 1.5rem 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0.6rem auto 0;
+            font-size: 1.05rem;
+            color: #c8ced8;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            margin-top: 1.2rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #bcc4d0;
+        }
+
+        /* ----- 导航栏 (轻量) ----- */
+        .nav-bar {
+            background: #ffffff;
+            border-bottom: 1px solid #e6e9ed;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0.7rem 1.5rem;
+            gap: 1.2rem 2rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .nav-bar a {
+            color: #3f464e;
+            border-bottom: none;
+            font-size: 0.95rem;
+            font-weight: 450;
+            position: relative;
+        }
+
+        .nav-bar a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #c44536;
+            transition: width 0.25s;
+            margin-top: 2px;
+        }
+
+        .nav-bar a:hover::after {
+            width: 100%;
+        }
+
+        .nav-bar a:hover {
+            color: #1f2329;
+            border-bottom: none;
+        }
+
+        /* ----- 主内容 (浅色区) ----- */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3rem;
+        }
+
+        /* 核心介绍 */
+        .intro-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #edf0f4;
+        }
+
+        .intro-section h2 {
+            font-size: 1.6rem;
+            font-weight: 450;
+            margin-bottom: 1.2rem;
+            color: #1f2329;
+        }
+
+        .intro-section p {
+            margin-bottom: 1.1rem;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-section .highlight-link {
+            font-weight: 500;
+        }
+
+        /* 三个场景模块 (卡片) */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .scene-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.8rem 1.5rem;
+            border: 1px solid #eef1f5;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.25s;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(0,0,0,0.04);
+        }
+
+        .scene-card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.9rem;
+            color: #2d3136;
+            border-left: 4px solid #c44536;
+            padding-left: 0.7rem;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #4d535c;
+        }
+
+        .scene-card .tag {
+            display: inline-block;
+            margin-top: 0.9rem;
+            font-size: 0.8rem;
+            background: #f2f4f7;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            color: #5c626b;
+        }
+
+        /* 常见说明 FAQ 摘要 */
+        .faq-summary {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            border: 1px solid #edf0f4;
+            margin-bottom: 2rem;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            margin-bottom: 1.4rem;
+            color: #1f2329;
+        }
+
+        .faq-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #f0f2f5;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item dt {
+            font-weight: 500;
+            color: #2d3136;
+            margin-bottom: 0.25rem;
+            font-size: 1.02rem;
+        }
+
+        .faq-item dd {
+            color: #5a606a;
+            font-size: 0.93rem;
+        }
+
+        .faq-item dd a {
+            word-break: break-all;
+        }
+
+        /* 尾部 */
+        .footer-note {
+            text-align: center;
+            padding: 2rem 0 1rem;
+            color: #7b828c;
+            font-size: 0.85rem;
+            border-top: 1px solid #e4e8ed;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-note a {
+            color: #7b828c;
+            border-bottom: 1px dotted #b0b7c2;
+        }
+
+        .footer-note a:hover {
+            color: #c44536;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .intro-section, .faq-summary {
+                padding: 1.5rem;
+            }
+            .scenes-grid {
+                gap: 1.2rem;
+            }
+            .nav-bar {
+                gap: 0.8rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 深色头图 -->
+<header class="hero">
+    <h1>竞彩网</h1>
+    <p>再次访问 · 收藏 · 持续关注<br>一个让你轻松回访、保持联系的信息页面</p>
+    <span class="badge">轻量导航 · 常看常新</span>
+</header>
+
+<!-- 顶部导航 (轻量) -->
+<nav class="nav-bar">
+    <a href="#intro">介绍</a>
+    <a href="#scenes">场景</a>
+    <a href="#faq">常见说明</a>
+    <a href="https://official-jingcaiwang.com" style="color:#c44536; font-weight:500;">竞彩网</a>
+</nav>
+
+<div class="container">
+
+    <!-- 核心介绍 -->
+    <section class="intro-section" id="intro">
+        <h2>再次回访，只需一次收藏</h2>
+        <p>
+            如果你之前浏览过 <a href="https://official-jingcaiwang.com">竞彩网</a>，却忘了保存链接，不必担心。
+            我们整理了这份轻量导航页，帮你快速找回熟悉的页面，也适合随时打开、随手翻阅。
+        </p>
+        <p>
+            从信息的连贯性出发，我们把常见关注点分成三个场景，方便你按自己的节奏浏览。
+            不论你是想回顾往日内容，还是希望保持长期关注，这里都留了一个安静的入口。
+        </p>
+        <p>
+            收藏此页，下次访问只需一步。我们也建议你直接把 <a href="https://official-jingcaiwang.com" class="highlight-link">竞彩网</a> 加入浏览器书签，省去搜索的周折。
+        </p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes-grid" id="scenes">
+        <div class="scene-card">
+            <h3>📎 快速回访</h3>
+            <p>
+                想再看一眼之前的内容？从收藏夹或历史记录找到这里，直接进入。
+                我们保持结构简洁，减少跳转层级。
+            </p>
+            <span class="tag">再次访问</span>
+        </div>
+        <div class="scene-card">
+            <h3>⭐ 收藏与备忘</h3>
+            <p>
+                习惯把好用的页面存下来？把这个页面加入书签，或把 <a href="https://official-jingcaiwang.com">竞彩网</a> 单独收藏。
+                保持关注，不必每次重新查找。
+            </p>
+            <span class="tag">收藏</span>
+        </div>
+        <div class="scene-card">
+            <h3>🔍 持续关注</h3>
+            <p>
+                如果你希望不定期回来看看，可以记住这个导航页。不需要刻意记地址，只要记得「竞彩网」三个字就好。
+                页面稳定，适合长期保留。
+            </p>
+            <span class="tag">持续关注</span>
+        </div>
+    </div>
+
+    <!-- 常见说明 FAQ 摘要 -->
+    <section class="faq-summary" id="faq">
+        <h2>常见说明 · 摘要</h2>
+        <dl>
+            <div class="faq-item">
+                <dt>这个页面和竞彩网是什么关系？</dt>
+                <dd>这是一个独立的介绍导航页，指向 <a href="https://official-jingcaiwang.com">竞彩网</a>。我们只是帮你整理了一个回访入口，不涉及平台内部功能。</dd>
+            </div>
+            <div class="faq-item">
+                <dt>我怎样快速再次访问竞彩网？</dt>
+                <dd>你可以直接点击页面里的链接 <a href="https://official-jingcaiwang.com">竞彩网</a>，也可以把它加入浏览器书签。这个导航页同样适合收藏。</dd>
+            </div>
+            <div class="faq-item">
+                <dt>内容会更新吗？</dt>
+                <dd>本页保持轻量稳定，不频繁变动。如果你需要关注最新动态，建议直接访问 <a href="https://official-jingcaiwang.com">竞彩网</a> 了解。</dd>
+            </div>
+            <div class="faq-item">
+                <dt>收藏后如何找到？</dt>
+                <dd>在浏览器的书签栏或收藏夹中查找「竞彩网」或本页面标题。你也可以在地址栏输入关键词回忆。</dd>
+            </div>
+        </dl>
+    </section>
+
+    <!-- 尾部 -->
+    <div class="footer-note">
+        <p>一份安静的导航 · 方便再次回访</p>
+        <p style="margin-top:0.6rem;">你可以随时通过 <a href="https://official-jingcaiwang.com">竞彩网</a> 了解更多。</p>
+    </div>
+
+</div>
+
+</body>
+</html>
